@@ -23,4 +23,9 @@
     background-color: #d3dce6;
   }
 </style>
+<script>
+  export default {
+    name:'step3'
+  }
+</script>
 

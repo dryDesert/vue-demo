@@ -8,6 +8,7 @@
 </template>
 <script>
   export default {
+    name:'step4',
     data() {
       return {
         activeName: 'second'

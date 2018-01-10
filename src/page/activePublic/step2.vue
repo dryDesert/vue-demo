@@ -11,6 +11,7 @@
 
 <script>
   export default {
+    name:'step2',
     data() {
       return {
         tableData: [{
