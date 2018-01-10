@@ -4,7 +4,7 @@
         <header class="header">
         <el-row>
             <el-col :span="24">
-              <el-menu default-active="/nav5" class="el-menu-demo" mode="horizontal" @select="">
+              <el-menu default-active="/nav5" class="el-menu-demo" mode="horizontal" @select="" :router="true">
                 <el-menu-item index="/nav1">高级插件</el-menu-item>
                 <el-menu-item index="/nav2">在线商城</el-menu-item>
                 <el-menu-item index="/nav3">客户管理</el-menu-item>
@@ -17,7 +17,10 @@
         <div style="position: relative;height: 60px;width: 100%;"></div>
 
         <main>
-              <!-- 左侧导航 -->
+            <router-view class="view"></router-view>
+        </main>
+        <!-- <main>
+             左侧导航
             <div class="main-left">
               <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
                 <el-menu-item index="/activePublic" :class="{'isActive': active}">活动发布</el-menu-item>
@@ -25,15 +28,15 @@
               </el-menu>
             </div>
 
-              <!-- <div class="main-left" >
+              <div class="main-left" >
                   <router-view class="view"></router-view>
-              </div> -->
+              </div>
 
-              <!-- 右侧主内容区 -->
+              右侧主内容区
               <div  class="main-right" >
                   <router-view class="view"></router-view>
               </div>
-        </main>
+        </main> -->
       </div>
 </template>
 
