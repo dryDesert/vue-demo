@@ -4,7 +4,7 @@
         <header class="header">
         <el-row>
             <el-col :span="24">
-              <el-menu default-active="/nav5" class="el-menu-demo" mode="horizontal" @select="">
+              <el-menu default-active="/nav5" class="el-menu-demo" mode="horizontal" :router="true">
                 <el-menu-item index="/nav1">高级插件</el-menu-item>
                 <el-menu-item index="/nav2">在线商城</el-menu-item>
                 <el-menu-item index="/nav3">客户管理</el-menu-item>
@@ -14,10 +14,9 @@
             </el-col>
         </el-row>
         </header>
-        <div style="position: relative;height: 60px;width: 100%;"></div>
+        <router-view class="view-content"></router-view>
 
-        <main>
-              <!-- 左侧导航 -->
+        <!-- <main>
             <div class="main-left">
               <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
                 <el-menu-item index="/activePublic" :class="{'isActive': active}">活动发布</el-menu-item>
@@ -25,15 +24,11 @@
               </el-menu>
             </div>
 
-              <!-- <div class="main-left" >
-                  <router-view class="view"></router-view>
-              </div> -->
-
-              <!-- 右侧主内容区 -->
               <div  class="main-right" >
                   <router-view class="view"></router-view>
               </div>
-        </main>
+        </main> -->
+        
       </div>
 </template>
 
@@ -71,5 +66,9 @@
       main .main-left{text-align: center;width: 200px;float: left;}
       main .main-right{-webkit-box-flex: 1;  -ms-flex: 1;  flex: 1;  background-color: #fff; padding: 50px 70px; }
       main .el-menu{background-color: transparent!important;}
+      .view-content {
+        position: relative;
+        width: 100%;
+      }
   </style>
 
