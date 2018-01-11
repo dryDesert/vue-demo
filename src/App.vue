@@ -1,42 +1,32 @@
 <template>
-      <div id="app">
+    <div id="app">
         <!-- 头部导航 -->
         <header class="header">
-        <el-row>
-            <el-col :span="24">
-              <el-menu default-active="/nav5" class="el-menu-demo" mode="horizontal" @select="" :router="true">
-                <el-menu-item index="/nav1">高级插件</el-menu-item>
-                <el-menu-item index="/nav2">在线商城</el-menu-item>
-                <el-menu-item index="/nav3">客户管理</el-menu-item>
-                <el-menu-item index="/nav4">系统设置</el-menu-item>
-                <el-menu-item index="/nav5">活动发布</el-menu-item>
-              </el-menu>
-            </el-col>
-        </el-row>
+                <div class="top">
+                    <a href="#">茅台股份官网</a>
+                    <label>|</label>
+                    <a href="#">国酒党建</a>
+                </div>
+                <div class="nav">
+                    <div class="logo">
+                        <a href="#"><img src="/assets/img/logo.jpg" height="70" width="230"></a>
+                    </div>
+                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
+                        <el-menu-item index="/nav1">首页</el-menu-item>
+                        <el-menu-item index="/nav2">走进茅台</el-menu-item>
+                        <el-menu-item index="/nav3">新闻资讯</el-menu-item>
+                        <el-menu-item index="/nav4">品牌战略</el-menu-item>
+                        <el-menu-item index="/nav5">社会责任</el-menu-item>
+                        <el-menu-item index="/nav6">文化茅台</el-menu-item>
+                        <el-menu-item index="/nav7">酒之博览</el-menu-item>
+                        <el-menu-item index="/nav8">茅台商城</el-menu-item>
+                    </el-menu>
+                </div>
         </header>
-        <div style="position: relative;height: 60px;width: 100%;"></div>
 
         <main>
             <router-view class="view"></router-view>
         </main>
-        <!-- <main>
-             左侧导航
-            <div class="main-left">
-              <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
-                <el-menu-item index="/activePublic" :class="{'isActive': active}">活动发布</el-menu-item>
-                <el-menu-item index="/activeManage" :class="{'isActive': !active}">活动管理</el-menu-item>
-              </el-menu>
-            </div>
-
-              <div class="main-left" >
-                  <router-view class="view"></router-view>
-              </div>
-
-              右侧主内容区
-              <div  class="main-right" >
-                  <router-view class="view"></router-view>
-              </div>
-        </main> -->
       </div>
 </template>
 
@@ -51,28 +41,99 @@
       name: 'app',
       data: function (){
         return {
-          active:true
+          activeIndex:'/nav5'
+        }
+      },
+      methods: {
+        handleSelect(key, keyPath) {
+          console.log(key, keyPath);
         }
       }
     }
     </script>
 
-  <style>
-    body{margin: 0;}
-    #app {
-      min-width: 1200px;
-      margin: 0 auto;
-      font-family: "Helvetica Neue","PingFang SC",Arial,sans-serif;
+ <style lang="scss">
+    *{
+        margin:0;
+    }
+    body{
+        background-color:#f3f3f3;
+        a{
+            text-decoration:none;
+            color:#000;
+        }
+        img{
+            display: block;
+        }
+        ul{
+            list-style:none;
+        }
+    }
+    header{
+        width:1200px;
+        margin:0 auto;
+        .top{
+            height:40px;
+            line-height:40px;
+            float:right;
+            a{
+                color:#000;
+                font-size:12px;
+                text-decoration:none;
+                &:hover{
+                    color:#f00;
+                    text-decoration:none;
+                }
+            }
+        }
+        .nav{
+            width:1200px;
+            height: 70px;
+            position:absolute;
+            top:40px;
+            .logo{
+                float:left;
+                width:200px;
+            }
+            .el-menu{
+                width:980px;
+                background-color:#fff;
+                margin-left:200px;
+                padding-left:20px;
+                .el-menu-item{
+                    width:117px;
+                    height:70px;
+                    line-height:70px;
+                    font-size:16px;
+                    font-weight:bold;
+                    text-align:center;
+                    &:hover{
+                        background-color:rgb(178,0,0);
+                        color:#fff;
+                        border:none;
+                        &.is-active{
+                            color:#fff;
+                        }
+                    }
+                    &.is-active{
+                        color:#000;
+                    }
+                }
+
+            }
+        }
     }
     /* 头部导航 */
-    header{z-index: 1000;min-width: 1200px;transition: all 0.5s ease;  border-top: solid 4px #3091F2;  background-color: #fff;  box-shadow: 0 2px 4px 0 rgba(0,0,0,.12),0 0 6px 0 rgba(0,0,0,.04);  }
-    header.header-fixed{position: fixed;top: 0;left: 0;right: 0;}
-    header .el-menu-demo{padding-left: 300px!important;}
+    // header{
+    //     z-index: 1000;
+    // }
+    // header.header-fixed{position: fixed;top: 0;left: 0;right: 0;}
+    // header .el-menu-demo{padding-left: 300px!important;}
 
-    /* 主内容区 */
-      main{    display: -webkit-box;  display: -ms-flexbox;  display: flex;  min-height: 800px;  border: solid 40px #E9ECF1;  background-color: #FCFCFC;  }
-      main .main-left{text-align: center;width: 200px;float: left;}
-      main .main-right{-webkit-box-flex: 1;  -ms-flex: 1;  flex: 1;  background-color: #fff; padding: 50px 70px; }
-      main .el-menu{background-color: transparent!important;}
+    // /* 主内容区 */
+    //   main{    display: -webkit-box;  display: -ms-flexbox;  display: flex;  min-height: 800px;  border: solid 40px #E9ECF1;  background-color: #FCFCFC;  }
+    //   main .main-left{text-align: center;width: 200px;float: left;}
+    //   main .main-right{-webkit-box-flex: 1;  -ms-flex: 1;  flex: 1;  background-color: #fff; padding: 50px 70px; }
+    //   main .el-menu{background-color: transparent!important;}
   </style>
 
