@@ -7,7 +7,7 @@
 		<div class="main">
 			<div class="main-left">
 				<div class="titlelm">社会责任</div>
-			    <el-menu default-active="/shehui" class="el-menu-vertical-demo" :router="true">
+			    <el-menu default-active="/dongshizhang" class="el-menu-vertical-demo" :router="true">
 			        <el-menu-item index="/shehui" :class="{'isActive': active}"><span class="iocyb"></span>社会责任观</el-menu-item>
 			    	<el-menu-item index="/dongshizhang" :class="{'isActive': !active}"><span class="iocyb"></span>董事长致辞</el-menu-item>
 			    	<el-menu-item index="/gongyi" :class="{'isActive': !active}"><span class="iocyb"></span>公益活动</el-menu-item>
@@ -21,6 +21,8 @@
 		        <router-view class="view"></router-view>
 		    </div>
 		</div>
+
+		<!-- <Footers></Footers> -->
 	</div>
 </template>
 <script>

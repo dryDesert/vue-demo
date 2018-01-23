@@ -1,18 +1,42 @@
 <template>
-	<div class="main-left">
-	    <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
-	        <el-menu-item index="/activePublic" :class="{'isActive': active}">活动发布3</el-menu-item>
-	    	<el-menu-item index="/activeManage" :class="{'isActive': !active}">活动管理3</el-menu-item>
-	    </el-menu>
-	</div>
+  <div id="nav3" class="content">
+    <div class="top-img">
+      <img src="../../assets/img/nav3.jpg">
+    </div>
+    <!-- 左侧部分 -->
+    <div class="main">
+      <div class="main-left">
+        <div class="titlelm">新闻资讯</div>
+          <el-menu default-active="/xwzx" class="el-menu-vertical-demo" :router="true">
+              <el-menu-item index="/gonggao" :class="{'isActive': active}"><span class="iocyb"></span>公告公示</el-menu-item>
+            <el-menu-item index="/jtxw" :class="{'isActive': !active}"><span class="iocyb"></span>集体新闻</el-menu-item>
+            <el-menu-item index="/hangye" :class="{'isActive': !active}"><span class="iocyb"></span>行业动态</el-menu-item>
+            <el-menu-item index="/meiti" :class="{'isActive': !active}"><span class="iocyb"></span>媒体聚焦</el-menu-item>
+            <el-menu-item index="/zhaopin" :class="{'isActive': !active}"><span class="iocyb"></span>招聘公告</el-menu-item>
+          </el-menu>
+      </div>
+      <!-- 右侧部分 -->
+      <div  class="main-right" >
+            <router-view class="view"></router-view>
+        </div>
+    </div>
+
+    <!-- <Footers></Footers> -->
+  </div>
 </template>
 <script>
     export default {
-      name: 'nav3',
-      data: function (){
-        return {
-          active:true
+        name: 'nav3',
+        data: function (){
+          return {
+              active:true
+          }
+        },
+        created:function(){
+          this.$router.push('xwzx'); // 页面加载时跳转
         }
-      }
     }
 </script>
+<style lang="scss">
+    @import './left'
+</style>

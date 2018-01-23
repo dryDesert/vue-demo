@@ -2,32 +2,32 @@
     <div id="app">
         <!-- 头部导航 -->
         <header class="header">
-                <div class="top">
-                    <a href="#">茅台股份官网</a>
-                    <label>|</label>
-                    <a href="#">国酒党建</a>
+            <div class="top">
+                <a href="#">茅台股份官网</a>
+                <label>|</label>
+                <a href="#">国酒党建</a>
+            </div>
+            <div class="nav">
+                <div class="logo">
+                    <a href="#"><img src="/assets/img/logo.png" height="71" width="230"></a>
                 </div>
-                <div class="nav">
-                    <div class="logo">
-                        <a href="#"><img src="/assets/img/logo.jpg" height="70" width="230"></a>
-                    </div>
-                    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
-                        <el-menu-item index="/nav1">首页</el-menu-item>
-                        <el-menu-item index="/nav2">走进茅台</el-menu-item>
-                        <el-menu-item index="/nav3">新闻资讯</el-menu-item>
-                        <el-menu-item index="/nav4">品牌战略</el-menu-item>
-                        <el-menu-item index="/nav5">社会责任</el-menu-item>
-                        <el-menu-item index="/nav6">文化茅台</el-menu-item>
-                        <el-menu-item index="/nav7">酒之博览</el-menu-item>
-                        <el-menu-item index="/nav8">茅台商城</el-menu-item>
-                    </el-menu>
-                </div>
+                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" :router="true">
+                    <el-menu-item index="/nav1">首页</el-menu-item>
+                    <el-menu-item index="/nav2">走进茅台</el-menu-item>
+                    <el-menu-item index="/nav3">新闻资讯</el-menu-item>
+                    <el-menu-item index="/nav4">品牌战略</el-menu-item>
+                    <el-menu-item index="/nav5">社会责任</el-menu-item>
+                    <el-menu-item index="/nav6">文化茅台</el-menu-item>
+                    <el-menu-item index="/nav7">酒之博览</el-menu-item>
+                    <el-menu-item index="/nav8">茅台商城</el-menu-item>
+                </el-menu>
+            </div>
         </header>
 
         <main>
             <router-view class="view"></router-view>
         </main>
-      </div>
+    </div>
 </template>
 
     <script>
@@ -38,17 +38,21 @@
     Vue.use(Element)
 
     export default {
-      name: 'app',
-      data: function (){
-        return {
-          activeIndex:'/nav5'
+        name: 'app',
+        data: function (){
+            return {
+                activeIndex:'/nav5',
+                // src:'/assets/img/logo.jpg'
+            }
+        },
+        methods: {
+            handleSelect(key, keyPath) {
+            console.log(key, keyPath);
+            }
+        },
+        created:function(){
+            this.$router.push('dongshizhang'); // 页面加载时跳转
         }
-      },
-      methods: {
-        handleSelect(key, keyPath) {
-          console.log(key, keyPath);
-        }
-      }
     }
     </script>
 
@@ -123,17 +127,32 @@
             }
         }
     }
-    /* 头部导航 */
-    // header{
-    //     z-index: 1000;
+    // .footer{
+    //     background-color: #181C25;
+    //     height: 50px;
+    //     margin-top:550px;
+    //     margin-right: auto;
+    //     margin-left: auto;
+    //     .foot{
+    //         height: 34px;
+    //         width: 1200px;
+    //         margin-right: auto;
+    //         margin-left: auto;
+    //         padding-top: 5px;
+    //         padding-bottom: 8px;
+    //         font-size: 12px;
+    //         line-height: 20px;
+    //         color: #67999E;
+    //         background-image: url(assets/img/footer.jpg);
+    //         background-repeat: no-repeat;
+    //         background-position: right center;
+    //         a{
+    //             height: 34px;
+    //             font-size: 12px;
+    //             color: #67999E;
+    //             line-height: 20px;
+    //         }
+    //     }
     // }
-    // header.header-fixed{position: fixed;top: 0;left: 0;right: 0;}
-    // header .el-menu-demo{padding-left: 300px!important;}
-
-    // /* 主内容区 */
-    //   main{    display: -webkit-box;  display: -ms-flexbox;  display: flex;  min-height: 800px;  border: solid 40px #E9ECF1;  background-color: #FCFCFC;  }
-    //   main .main-left{text-align: center;width: 200px;float: left;}
-    //   main .main-right{-webkit-box-flex: 1;  -ms-flex: 1;  flex: 1;  background-color: #fff; padding: 50px 70px; }
-    //   main .el-menu{background-color: transparent!important;}
   </style>
 
