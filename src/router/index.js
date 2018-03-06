@@ -15,7 +15,7 @@ import page3 from '@/page/activeManage/page3.vue'
 import page4 from '@/page/activeManage/page4.vue'
 import totalpages from '@/page/activeManage/totalpages.vue'
 
-// import footers from '@/page/left/footers.vue'
+import footers from '@/page/left/footers.vue'
 
 import nav1 from '@/page/left/nav1.vue'
 import nav2 from '@/page/left/nav2.vue'
@@ -108,7 +108,7 @@ export default new Router({
 			        component: maotai
 			    },
 			    {
-			        path: '/chengyaun',
+			        path: '/chengyuan',
 			        name:'集体成员',
 			        component: chengyuan
 			    },

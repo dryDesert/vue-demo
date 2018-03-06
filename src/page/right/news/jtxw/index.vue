@@ -3,10 +3,10 @@
 		<div class="list-title">
 			<span class="dqwzyb">
 				首页<span>&nbsp;&gt;</span>
-				<a href="#">集团资讯</a><span>&nbsp;&gt;</span>
-				<a href="#">集团新闻</a><span>&nbsp;&gt;</span>
+				<a href="#">新闻资讯</a><span>&nbsp;&gt;</span>
+				<a href="#">集体新闻</a><span>&nbsp;&gt;</span>
 			</span>
-			集团新闻
+			集体新闻
 		</div>
 		<ul class="list-nw" style="min-height:500px;">
 			<li v-for="item in items">

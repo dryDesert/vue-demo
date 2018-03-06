@@ -20,7 +20,7 @@
 .footer{
         background-color: #181C25;
         height: 50px;
-        margin-top:550px;
+        // margin-top:550px;
         margin-right: auto;
         margin-left: auto;
         .foot{
@@ -33,7 +33,7 @@
             font-size: 12px;
             line-height: 20px;
             color: #67999E;
-            background-image: url(assets/img/footer.jpg);
+            // background-image: url(assets/img/footer.jpg);
             background-repeat: no-repeat;
             background-position: right center;
             a{

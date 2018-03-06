@@ -3,12 +3,12 @@
     <div class="top-img">
       <img src="../../assets/img/nav3.jpg">
     </div>
-    <!-- 左侧部分 -->
     <div class="main">
+      <!-- 左侧部分 -->
       <div class="main-left">
         <div class="titlelm">新闻资讯</div>
           <el-menu default-active="/xwzx" class="el-menu-vertical-demo" :router="true">
-              <el-menu-item index="/gonggao" :class="{'isActive': active}"><span class="iocyb"></span>公告公示</el-menu-item>
+            <el-menu-item index="/gonggao" :class="{'isActive': active}"><span class="iocyb"></span>公告公示</el-menu-item>
             <el-menu-item index="/jtxw" :class="{'isActive': !active}"><span class="iocyb"></span>集体新闻</el-menu-item>
             <el-menu-item index="/hangye" :class="{'isActive': !active}"><span class="iocyb"></span>行业动态</el-menu-item>
             <el-menu-item index="/meiti" :class="{'isActive': !active}"><span class="iocyb"></span>媒体聚焦</el-menu-item>
@@ -21,10 +21,11 @@
         </div>
     </div>
 
-    <!-- <Footers></Footers> -->
+    <!-- <new-footer></new-footer> -->
   </div>
 </template>
 <script>
+    // import NewFooter from './footers.vue'
     export default {
         name: 'nav3',
         data: function (){
@@ -32,6 +33,9 @@
               active:true
           }
         },
+        // components:{
+        //     NewFooter,
+        // },
         created:function(){
           this.$router.push('xwzx'); // 页面加载时跳转
         }
